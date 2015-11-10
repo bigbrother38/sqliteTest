@@ -1,0 +1,15 @@
+th[data-sort]{
+  cursor:pointer;
+}
+.tapcontent{
+	margin-left:10px;
+}
+.red{
+	color:red;
+}
+.blue{
+	color:blue;
+}
+.green{
+	color:green;
+}
