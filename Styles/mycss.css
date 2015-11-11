@@ -13,3 +13,20 @@ th[data-sort]{
 .green{
 	color:green;
 }
+thead th {
+    background: #724a10;
+    color: #fff;
+}
+thead
+{
+    position: absolute;
+}
+table th,table td{
+    width:100px;//fixed width
+}
+#simpleTable th,#simpleTable td{
+    width:150px;//fixed width
+}
+.td1{
+    padding-top:50px;//fixed width
+}
