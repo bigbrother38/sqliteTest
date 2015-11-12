@@ -22,7 +22,7 @@ thead
     position: absolute;
 }
 table th,table td{
-    width:100px;//fixed width
+    width:130px;//fixed width
 }
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
