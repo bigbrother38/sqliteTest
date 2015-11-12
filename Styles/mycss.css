@@ -26,7 +26,26 @@ table th,table td{
 }
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
+	word-break: break-all;
+	word-wrap : break-word
 }
+
 .td1{
     padding-top:50px;//fixed width
+}
+
+@media only screen and (max-width: 1024px) {
+    #simpleTable {
+		table-layout: fixed;
+		width:795px;
+	}
+	table th,table td{
+    width:70px;//fixed width
+	}
+	#simpleTable .td1{
+		padding-top:100px;//fixed width
+	}
+	#simpleTable th,#simpleTable td{
+		width:68px;//fixed width
+	}
 }
