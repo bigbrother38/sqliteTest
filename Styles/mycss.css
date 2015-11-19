@@ -34,22 +34,30 @@ table th,table td{
     padding-top:50px;//fixed width
 }
 
+.td3{
+    padding-top:25px;//fixed width
+}
+
 @media only screen and (max-width: 1024px) {
-    #simpleTable {
+    #simpleTable,  #simpleTable thead{
 		table-layout: fixed;
-		width:795px;
+		width:500px;
 	}
 	Table {
 		table-layout: fixed;
 		width:932px;
 	}
 	table th,table td{
-    width:70px;//fixed width
+    //width:70px;//fixed width
 	}
+	
 	#simpleTable .td1{
 		padding-top:100px;//fixed width
 	}
+	#simpleTable .td3{
+		padding-top:25px;//fixed width
+	}
 	#simpleTable th,#simpleTable td{
-		width:68px;//fixed width
+		//width:68px;//fixed width
 	}
 }
