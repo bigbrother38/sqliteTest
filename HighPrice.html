@@ -1,0 +1,40 @@
+﻿<script src="Scripts/jquery-1.10.2.js"></script>
+<script src="Scripts/jquery-ui.js"></script>
+<script src="Scripts/StupidTable/stupidtable.js"></script>
+<link rel="stylesheet" href="Styles/mycss.css">
+<link rel="stylesheet" href="Styles/jquery-ui.css">
+<script>var high; $( document ).ready(function() {high = $('thead').offset().top-50;$( "#tabs" ).tabs(); var a = $("#simpleTable").stupidtable();var table = $("#simpleTable");a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
+<div>最後更新日期：2015/11/19 下午 05:08:40</div><div>資料日期：11/19</div>
+<div id="tabs"><ul><li><a href="#tabs-1">平民股神理論</a></li><li><a href="#tabs-2">原始資料</a></li></ul><div id="tabs-1">
+
+</div><div id="tabs-2"><table id="simpleTable"><thead><tr><th data-sort="int">代號</th><th data-sort="string">名稱</th><th data-sort="float">股價</th><th data-sort="float">一年最高價</th></tr></thead><tbody>
+<tr><td align="center" class="td3">6605</td><td align="center" class="td3">帝寶</td><td align="center" class="td3">121</td><td align="center" class="td3">147.5</td></tr>
+<tr><td align="center">8341</td><td align="center">日友</td><td align="center">132</td><td align="center">132</td></tr>
+<tr><td align="center">1762</td><td align="center">中化生</td><td align="center">37.4</td><td align="center">38.5</td></tr>
+<tr><td align="center">1720</td><td align="center">生達</td><td align="center">40.45</td><td align="center">40.45</td></tr>
+<tr><td align="center">4141</td><td align="center">F-龍燈</td><td align="center">36.1</td><td align="center">57</td></tr>
+<tr><td align="center">3380</td><td align="center">明泰</td><td align="center">17.8</td><td align="center">24.4</td></tr>
+<tr><td align="center">4737</td><td align="center">華廣</td><td align="center">60.2</td><td align="center">72.9</td></tr>
+<tr><td align="center">2457</td><td align="center">飛宏</td><td align="center">10.15</td><td align="center">18.6</td></tr>
+<tr><td align="center">1452</td><td align="center">宏益</td><td align="center">25.75</td><td align="center">42.7</td></tr>
+<tr><td align="center">2352</td><td align="center">佳世達</td><td align="center">11.2</td><td align="center">15.85</td></tr>
+<tr><td align="center">1519</td><td align="center">華城</td><td align="center">16.25</td><td align="center">18.35</td></tr>
+<tr><td align="center">6451</td><td align="center">F-訊芯</td><td align="center">129</td><td align="center">188</td></tr>
+<tr><td align="center">6103</td><td align="center">合邦</td><td align="center">8.91</td><td align="center">14.4</td></tr>
+<tr><td align="center">5348</td><td align="center">系通</td><td align="center">6.93</td><td align="center">12.05</td></tr>
+<tr><td align="center">4111</td><td align="center">濟生</td><td align="center">26.4</td><td align="center">34.3</td></tr>
+<tr><td align="center">8096</td><td align="center">擎亞</td><td align="center">30.35</td><td align="center">31.4</td></tr>
+<tr><td align="center">4162</td><td align="center">智擎</td><td align="center">237.5</td><td align="center">300</td></tr>
+<tr><td align="center">3642</td><td align="center">駿熠電</td><td align="center">22.65</td><td align="center">43.5</td></tr>
+<tr><td align="center">4735</td><td align="center">豪展</td><td align="center">26.55</td><td align="center">31</td></tr>
+<tr><td align="center">3205</td><td align="center">佰研</td><td align="center">333</td><td align="center">333</td></tr>
+<tr><td align="center">3373</td><td align="center">熱映</td><td align="center">27.2</td><td align="center">27.2</td></tr>
+<tr><td align="center">4102</td><td align="center">永日</td><td align="center">23.9</td><td align="center">23.9</td></tr>
+<tr><td align="center">3479</td><td align="center">安勤</td><td align="center">62.3</td><td align="center">62.3</td></tr>
+<tr><td align="center">4530</td><td align="center">宏易</td><td align="center">5.04</td><td align="center">5.7</td></tr>
+<tr><td align="center">4152</td><td align="center">台微體</td><td align="center">157</td><td align="center">276</td></tr>
+<tr><td align="center">4121</td><td align="center">優盛</td><td align="center">14.2</td><td align="center">16</td></tr>
+<tr><td align="center">4131</td><td align="center">晶宇</td><td align="center">10.6</td><td align="center">14.75</td></tr>
+</tbody></table>
+</div></div>
+</tbody></table>
