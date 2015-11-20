@@ -1,10 +1,10 @@
-﻿ <script src="Scripts/jquery-1.10.2.js"></script>
+﻿<script src="Scripts/jquery-1.10.2.js"></script>
 <script src="Scripts/jquery-ui.js"></script>
 <script src="Scripts/StupidTable/stupidtable.js"></script>
 <link rel="stylesheet" href="Styles/mycss.css">
 <link rel="stylesheet" href="Styles/jquery-ui.css">
 <script>$( document ).ready(function() {$( "#tabs" ).tabs(); var a = $("#simpleTable").stupidtable();var b = $("#simpleTable2").stupidtable();var table = $("#simpleTable");var table2 = $("#simpleTable2");a.add(b).bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td1");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", "108px");}; if (windowTop > table2.offset().top) {$("thead", table2).addClass("Fixed").css("top", windowTop);}else {$("thead", table2).removeClass("Fixed").css("top", "108px");}});});function searchA(text){$.each($("#simpleTable tbody").find("tr"), function() {if($($(this).find('td')[0]).text().toLowerCase().indexOf(text.toLowerCase()) != -1||$($(this).find('td')[1]).text().toLowerCase().indexOf(text.toLowerCase()) != -1){$(this).show();}else{$(this).hide();}});} function searchB(text){$.each($("#simpleTable2 tbody").find("tr"), function() {if($($(this).find('td')[0]).text().toLowerCase().indexOf(text.toLowerCase()) != -1||$($(this).find('td')[1]).text().toLowerCase().indexOf(text.toLowerCase()) != -1) {$(this).show();}else{$(this).hide();}});}</script>
-<div>最後更新日期：2015/11/21 上午 12:25:50</div>
+<div>最後更新日期：2015/11/21 上午 12:47:05</div>
 <div id="tabs"><ul><li><a href="#tabs-1">估價理論</a></li><li><a href="#tabs-2">原始資料</a></li><li><a href="#tabs-3">估價結果</a></li></ul><div id="tabs-1">
 <p>1.泛用型：本益比法</p><div class="tapcontent"><pre>     EPS        X      本益比
 <公司5年平均值>         <大盤>
