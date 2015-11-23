@@ -28,6 +28,9 @@ Table {
 		table-layout: fixed;
 		width:100%;
 	}
+	#simpleTable3 {
+		table-layout: fixed;
+	}
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
 	word-break: break-all;

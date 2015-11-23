@@ -4,49 +4,36 @@
 <link rel="stylesheet" href="Styles/mycss.css">
 <link rel="stylesheet" href="Styles/jquery-ui.css">
 <script>var high; $( document ).ready(function() {high = $('ul').offset().top-10;$( "#tabs" ).tabs(); $("thead", table).css("top", high+"px"); var a = $("#simpleTable").stupidtable();var table = $("#simpleTable");a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
-<div>最後更新日期：2015/11/22 下午 09:00:14</div><div>資料日期：11/20</div>
+<div>最後更新日期：2015/11/23 下午 06:47:52</div><div>資料日期：11/23</div>
 <div id="tabs"><ul><li><a href="#tabs-1">平民股神理論</a></li><li><a href="#tabs-2">篩選結果</a></li></ul><div id="tabs-1">
 
 </div><div id="tabs-2"><table id="simpleTable"><thead><tr><th data-sort="int">代號</th><th data-sort="string">名稱</th><th data-sort="float">股價</th><th data-sort="float">一年最高價</th><th data-sort="float">股神理論</th></tr></thead><tbody>
-<tr><td align="center" class="td3">3588</td><td align="center" class="td3">通嘉</td><td align="center" class="td3">31.35</td><td align="center" class="td3">46.65</td><td align="center" class="td3"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">2337</td><td align="center">旺宏</td><td align="center">4.96</td><td align="center">7.88</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4141</td><td align="center">F-龍燈</td><td align="center">39.7</td><td align="center">57</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6225</td><td align="center">天瀚</td><td align="center">3.53</td><td align="center">6.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">2443</td><td align="center">新利虹</td><td align="center">6.95</td><td align="center">15.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">1527</td><td align="center">鑽全</td><td align="center">62.9</td><td align="center">71.1</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">9906</td><td align="center">欣巴巴</td><td align="center">14.4</td><td align="center">53.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4935</td><td align="center">F-茂林</td><td align="center">78.8</td><td align="center">78.8</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">1762</td><td align="center">中化生</td><td align="center">41.1</td><td align="center">41.1</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">2496</td><td align="center">卓越</td><td align="center">11.7</td><td align="center">11.7</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">8105</td><td align="center">凌巨</td><td align="center">22.4</td><td align="center">22.4</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">1568</td><td align="center">倉佑</td><td align="center">18.55</td><td align="center">23.65</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4763</td><td align="center">F-材料</td><td align="center">135</td><td align="center">145</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">9935</td><td align="center">慶豐富</td><td align="center">11.25</td><td align="center">12.35</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">1731</td><td align="center">美吾華</td><td align="center">15.3</td><td align="center">16.1</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">1721</td><td align="center">三晃</td><td align="center">12</td><td align="center">12.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3115</td><td align="center">寶島極</td><td align="center">12.65</td><td align="center">15.2</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3131</td><td align="center">弘塑</td><td align="center">187</td><td align="center">214</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">8403</td><td align="center">盛弘</td><td align="center">47.3</td><td align="center">47.3</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">8432</td><td align="center">東生華</td><td align="center">67.1</td><td align="center">67.1</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">4735</td><td align="center">豪展</td><td align="center">29.2</td><td align="center">31</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5457</td><td align="center">宣德</td><td align="center">28.1</td><td align="center">46.8</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">8027</td><td align="center">鈦昇</td><td align="center">21.5</td><td align="center">41.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4726</td><td align="center">永昕</td><td align="center">54.6</td><td align="center">57</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4721</td><td align="center">美琪瑪</td><td align="center">28.7</td><td align="center">29</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6163</td><td align="center">華電網</td><td align="center">11.6</td><td align="center">18.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6457</td><td align="center">紘康</td><td align="center">37.6</td><td align="center">42.8</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3624</td><td align="center">光頡</td><td align="center">24.9</td><td align="center">28.3</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3642</td><td align="center">駿熠電</td><td align="center">24.9</td><td align="center">43.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5481</td><td align="center">華韡</td><td align="center">15.5</td><td align="center">21.9</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3441</td><td align="center">聯一光</td><td align="center">12.75</td><td align="center">24.15</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3265</td><td align="center">台星科</td><td align="center">23.3</td><td align="center">48.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">1784</td><td align="center">訊聯</td><td align="center">39.95</td><td align="center">47.7</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4121</td><td align="center">優盛</td><td align="center">15.6</td><td align="center">16</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4111</td><td align="center">濟生</td><td align="center">29</td><td align="center">34.3</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4102</td><td align="center">永日</td><td align="center">26.25</td><td align="center">26.25</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">6169</td><td align="center">昱泉</td><td align="center">25.7</td><td align="center">25.8</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3508</td><td align="center">位速</td><td align="center">16.3</td><td align="center">32</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6198</td><td align="center">凌泰</td><td align="center">14.75</td><td align="center">17.9</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center" class="td3">2614</td><td align="center" class="td3">東森</td><td align="center" class="td3">7.48</td><td align="center" class="td3">11.75</td><td align="center" class="td3"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">3376</td><td align="center">新日興</td><td align="center">115.5</td><td align="center">115.5</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">1530</td><td align="center">亞崴</td><td align="center">34.65</td><td align="center">49.9</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">2485</td><td align="center">兆赫</td><td align="center">47.3</td><td align="center">47.3</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">1568</td><td align="center">倉佑</td><td align="center">20.4</td><td align="center">23.65</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">1307</td><td align="center">三芳</td><td align="center">42.55</td><td align="center">58</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">1475</td><td align="center">本盟</td><td align="center">8.19</td><td align="center">16.2</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">2443</td><td align="center">新利虹</td><td align="center">7.64</td><td align="center">15.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">910708</td><td align="center">恒大健</td><td align="center">410</td><td align="center">420</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">2496</td><td align="center">卓越</td><td align="center">12.85</td><td align="center">12.85</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">8105</td><td align="center">凌巨</td><td align="center">24.6</td><td align="center">24.6</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">2104</td><td align="center">中橡</td><td align="center">25.2</td><td align="center">33.85</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">1463</td><td align="center">強盛</td><td align="center">17.4</td><td align="center">20.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">3562</td><td align="center">頂晶科</td><td align="center">3.74</td><td align="center">7.41</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">4549</td><td align="center">桓達</td><td align="center">82.5</td><td align="center">170.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">1787</td><td align="center">福盈科</td><td align="center">23.65</td><td align="center">30.8</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">8432</td><td align="center">東生華</td><td align="center">73.8</td><td align="center">73.8</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">6457</td><td align="center">紘康</td><td align="center">41.35</td><td align="center">42.8</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">8171</td><td align="center">天宇</td><td align="center">9.95</td><td align="center">21.65</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">4121</td><td align="center">優盛</td><td align="center">17.15</td><td align="center">17.15</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">3521</td><td align="center">鴻翊</td><td align="center">15.5</td><td align="center">18.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">6169</td><td align="center">昱泉</td><td align="center">28.25</td><td align="center">28.25</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">6237</td><td align="center">驊訊</td><td align="center">35.5</td><td align="center">35.5</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">8066</td><td align="center">來思達</td><td align="center">109</td><td align="center">131</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">3452</td><td align="center">益通</td><td align="center">12.3</td><td align="center">18.75</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">8082</td><td align="center">漢承泰</td><td align="center">2.38</td><td align="center">5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
 </tbody></table>
 </div></div>
 </tbody></table>
