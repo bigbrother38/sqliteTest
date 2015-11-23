@@ -24,6 +24,10 @@ thead
 table th,table td{
     width:130px;//fixed width
 }
+Table {
+		table-layout: fixed;
+		width:100%;
+	}
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
 	word-break: break-all;
@@ -35,18 +39,11 @@ table th,table td{
 }
 
 .td3{
-    padding-top:25px;//fixed width
+    padding-top:10px;//fixed width
 }
 
 @media only screen and (max-width: 1024px) {
-    #simpleTable,  #simpleTable thead{
-		table-layout: fixed;
-		width:500px;
-	}
-	Table {
-		table-layout: fixed;
-		width:932px;
-	}
+    
 	table th,table td{
     //width:70px;//fixed width
 	}
@@ -57,7 +54,27 @@ table th,table td{
 	#simpleTable .td3{
 		padding-top:25px;//fixed width
 	}
+	
+	#simpleTable2 .td1{
+		padding-top:70px;//fixed width
+	}
 	#simpleTable th,#simpleTable td{
 		//width:68px;//fixed width
 	}
+}
+
+@media only screen and (max-width: 1240px) {
+    
+	#simpleTable .td1{
+		padding-top:70px;//fixed width
+	}
+	
+	
+}
+@media only screen and (max-width: 880px) {
+    
+	#simpleTable .td1,#simpleTable2 .td1{
+		padding-top:90px;//fixed width
+	}
+	
 }
