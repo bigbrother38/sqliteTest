@@ -29,7 +29,7 @@ Table {
 		width:100%;
 	}
 	#simpleTable3 {
-		table-layout: fixed;
+		width: inherit;
 	}
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
