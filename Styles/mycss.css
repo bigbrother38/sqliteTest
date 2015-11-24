@@ -42,7 +42,7 @@ Table {
 }
 
 .td3{
-    padding-top:10px;//fixed width
+    padding-top:25px;//fixed width
 }
 
 @media only screen and (max-width: 1024px) {

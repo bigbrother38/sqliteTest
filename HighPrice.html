@@ -4,12 +4,12 @@
 <link rel="stylesheet" href="Styles/mycss.css">
 <link rel="stylesheet" href="Styles/jquery-ui.css">
 <script>var high; $( document ).ready(function() {high = $('ul').offset().top-10;$( "#tabs" ).tabs(); $("thead", table).css("top", high+"px"); var a = $("#simpleTable3").stupidtable();var table = $("#simpleTable3");a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
-<div>最後更新日期：2015/11/24 下午 07:00:04</div><div>資料日期：11/24</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
+<div>最後更新日期：2015/11/24 下午 07:05:11</div><div>資料日期：11/24</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
 <div id="tabs"><ul><li><a href="#tabs-1">平民股神理論</a></li><li><a href="#tabs-2">篩選結果</a></li></ul><div id="tabs-1">
 <p>哪些跡象堪稱為強勢股？</p><div class="tapcontent"><pre><h3>(1)漲停板<10%>
 (2)突破新高<這邊以一年新高為基礎>
 (3)天天漲</h3></pre></div><p>收盤價低於最高價8%　就是脫手時候</p><p>符合(1)(2)者，以Yes表示</p>
-</div><div id="tabs-2"><table id="simpleTable3"><thead><tr><th data-sort="int">代號</th><th data-sort="string">名稱</th><th data-sort="float">股價</th><th data-sort="float">一年最高價</th><th data-sort="float">股神理論</th></tr></thead><tbody>
+</div><div id="tabs-2"><table id="simpleTable3"><thead><tr><th data-sort="int">代號</th><th data-sort="string">名稱</th><th data-sort="float">股價</th><th data-sort="float">一年最高價</th><th data-sort="string">股神理論</th></tr></thead><tbody>
 <tr><td align="center" class="td3">1475</td><td align="center" class="td3">本盟</td><td align="center" class="td3">9</td><td align="center" class="td3">16.2</td><td align="center" class="td3"style="font-weight: bold; color:green;">No</td></tr>
 <tr><td align="center">1786</td><td align="center">科妍</td><td align="center">67.8</td><td align="center">103</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
 <tr><td align="center">3694</td><td align="center">海華</td><td align="center">20.2</td><td align="center">25.2</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
