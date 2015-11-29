@@ -79,5 +79,7 @@ Table {
 	#simpleTable .td1,#simpleTable2 .td1{
 		padding-top:90px;//fixed width
 	}
-	
+	#simpleTable .td3{
+		padding-top:35px;//fixed width
+	}
 }
