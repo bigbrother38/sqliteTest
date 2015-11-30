@@ -3,34 +3,23 @@
 <script src="Scripts/StupidTable/stupidtable.js"></script>
 <link rel="stylesheet" href="Styles/mycss.css">
 <link rel="stylesheet" href="Styles/jquery-ui.css">
-<script>var high; $( document ).ready(function() {
-$( "#tabs" ).tabs(); high = $('ul').offset().top.toFixed(0)-20;
-var table = $("#simpleTable3");$("thead", table).css("top", high+"px"); 
-var a = $("#simpleTable3").stupidtable();a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
-<div>最後更新日期：2015/11/29 下午 09:00:05</div><div>資料日期：11/27</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
+<script>var high; $( document ).ready(function() {high = $('ul').offset().top-10;$( "#tabs" ).tabs(); $("thead", table).css("top", high+"px"); var a = $("#simpleTable3").stupidtable();var table = $("#simpleTable3");a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
+<div>最後更新日期：2015/11/30 下午 06:00:21</div><div>資料日期：11/30</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
 <div id="tabs"><ul><li><a href="#tabs-1">平民股神理論</a></li><li><a href="#tabs-2">篩選結果</a></li></ul><div id="tabs-1">
 <p>哪些跡象堪稱為強勢股？</p><div class="tapcontent"><pre><h3>(1)漲停板<10%>
 (2)突破新高<這邊以一年新高為基礎>
 (3)天天漲</h3></pre><p>收盤價低於最高價11%　就是脫手時候</p><pre><h3>因為隔天就算漲停也不會破新高</h3></pre><p>符合(1)(2)者，以Yes表示</p></div>
 </div><div id="tabs-2"><table id="simpleTable3"><thead><tr><th data-sort="int">代號</th><th data-sort="string">名稱</th><th data-sort="float">股價</th><th data-sort="float">一年最高價</th><th data-sort="string">股神理論</th></tr></thead><tbody>
-<tr><td align="center" class="td3">3049</td><td align="center" class="td3">和鑫</td><td align="center" class="td3">6.6</td><td align="center" class="td3">8.1</td><td align="center" class="td3"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">2436</td><td align="center">偉詮電</td><td align="center">18.75</td><td align="center">36.2</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3257</td><td align="center">虹冠電</td><td align="center">44.8</td><td align="center">86.7</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5259</td><td align="center">清惠</td><td align="center">7.43</td><td align="center">23.6</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6116</td><td align="center">彩晶</td><td align="center">3.9</td><td align="center">8.4</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6131</td><td align="center">悠克</td><td align="center">11.75</td><td align="center">29.9</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">2364</td><td align="center">倫飛</td><td align="center">3.16</td><td align="center">5.75</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6289</td><td align="center">華上</td><td align="center">1.06</td><td align="center">2.37</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">6259</td><td align="center">百徽</td><td align="center">9.35</td><td align="center">45.95</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5309</td><td align="center">系統電</td><td align="center">19.9</td><td align="center">20</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3580</td><td align="center">友威科</td><td align="center">7.3</td><td align="center">13.5</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5263</td><td align="center">智崴</td><td align="center">326.5</td><td align="center">454</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3268</td><td align="center">海德威</td><td align="center">16.05</td><td align="center">38.25</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">3629</td><td align="center">卓韋</td><td align="center">19.4</td><td align="center">19.4</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
-<tr><td align="center">5455</td><td align="center">訊利電</td><td align="center">5.89</td><td align="center">17.3</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">4971</td><td align="center">F-IET</td><td align="center">117.5</td><td align="center">138</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">8446</td><td align="center">華研</td><td align="center">107</td><td align="center">166</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
-<tr><td align="center">5902</td><td align="center">德記</td><td align="center">11.4</td><td align="center">16.45</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center" class="td3">3049</td><td align="center" class="td3">和鑫</td><td align="center" class="td3">7.26</td><td align="center" class="td3">8.1</td><td align="center" class="td3"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">1721</td><td align="center">三晃</td><td align="center">13.2</td><td align="center">13.2</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">1519</td><td align="center">華城</td><td align="center">16.6</td><td align="center">18.35</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">3305</td><td align="center">昇貿</td><td align="center">25.05</td><td align="center">34.85</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">6289</td><td align="center">華上</td><td align="center">1.16</td><td align="center">2.37</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">2926</td><td align="center">誠品生</td><td align="center">170.5</td><td align="center">175</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">8916</td><td align="center">光隆</td><td align="center">65</td><td align="center">65</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">4174</td><td align="center">浩鼎</td><td align="center">676</td><td align="center">676</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
+<tr><td align="center">6182</td><td align="center">合晶</td><td align="center">11.75</td><td align="center">16.45</td><td align="center"style="font-weight: bold; color:green;">No</td></tr>
+<tr><td align="center">3629</td><td align="center">卓韋</td><td align="center">21.3</td><td align="center">21.3</td><td align="center"style="font-weight: bold; color:red;">Yes</td></tr>
 </tbody></table>
 </div></div>
 </tbody></table>
