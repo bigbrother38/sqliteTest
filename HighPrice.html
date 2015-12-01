@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="Styles/mycss.css">
 <link rel="stylesheet" href="Styles/jquery-ui.css">
 <script>var high; $( document ).ready(function() {high = $('ul').offset().top-10;$( "#tabs" ).tabs(); $("thead", table).css("top", high+"px"); var a = $("#simpleTable3").stupidtable();var table = $("#simpleTable3");a.bind('aftertablesort', function (event, data) {$(this).find('tbody td').removeAttr('class');$.each($(this).find('tbody tr')[0].children,function(i,o){$(this).addClass("td3");});});$(window).scroll(function() {var windowTop = $(window).scrollTop(); if(windowTop > table.offset().top) {$("thead", table).addClass("Fixed").css("top", windowTop);}else {$("thead", table).removeClass("Fixed").css("top", high+"px");}})});</script>
-<div>最後更新日期：2015/12/1 下午 06:00:57</div><div>資料日期：12/01</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
+<div>最後更新日期：2015/12/1 下午 07:00:26</div><div>資料日期：12/01</div><a href="https://bigbrother38.github.io/sqliteTest/Price.html">股票估價</a>
 <div id="tabs"><ul><li><a href="#tabs-1">平民股神理論</a></li><li><a href="#tabs-2">篩選結果</a></li></ul><div id="tabs-1">
 <p>哪些跡象堪稱為強勢股？</p><div class="tapcontent"><pre><h3>(1)漲停板<10%>
 (2)突破新高<這邊以一年新高為基礎>
