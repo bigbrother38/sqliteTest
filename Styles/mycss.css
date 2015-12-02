@@ -41,10 +41,6 @@ Table {
     padding-top:50px;//fixed width
 }
 
-.td3{
-    padding-top:25px;//fixed width
-}
-
 @media only screen and (max-width: 1024px) {
     
 	table th,table td{
@@ -79,7 +75,5 @@ Table {
 	#simpleTable .td1,#simpleTable2 .td1{
 		padding-top:90px;//fixed width
 	}
-	.td3{
-		padding-top:50px;//fixed width
-	}
+	
 }
