@@ -6,9 +6,6 @@ $( document ).ready(function() {
 	var a = $("#simpleTable3").stupidtable();
 	a.bind('aftertablesort', function (event, data) {
 		$(this).find('tbody td').css('padding-top','');
-		$.each($(this).find('tbody tr')[0].children,function(i,o){
-			//$(this).css('padding-top',$('thead tr').css('height'));
-		});
 	});
 	
 	//table
@@ -27,8 +24,7 @@ $( document ).ready(function() {
 	
 	//click refresh tr padding-top, thead top
 	$('#ui-id-2').bind('click', function(){
-		//$($('tbody tr')[0].children).css('paddind-top',$("thead tr").css('height'));
-		high = $('ul').offset().top - 20;
+		high = $('ul').offset().top - 50;
 		$("thead", table).css("top", high+"px");
 	})
 	
