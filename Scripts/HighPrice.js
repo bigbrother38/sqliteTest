@@ -24,7 +24,7 @@ $( document ).ready(function() {
 	
 	//click refresh tr padding-top, thead top
 	$('#ui-id-2').bind('click', function(){
-		high = $('ul').height();
+		high = $('ul').height()+8;
 		$("thead", table).css("top", high+"px");
 	})
 	
