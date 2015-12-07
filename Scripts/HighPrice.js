@@ -8,7 +8,7 @@ $( document ).ready(function() {
 		$(this).find('tbody td').css('padding-top','');
 	});
 	
-	//table
+	//table scroll
 	var table = $("#simpleTable3");
 	$(window).scroll(function() {
 		var windowTop = $(window).scrollTop(); 

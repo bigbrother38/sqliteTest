@@ -1,15 +1,18 @@
+var high; 
 $( document ).ready(function() {
 	$( "#tabs" ).tabs(); 
+	
+	
+	//sort
 	var a = $("#simpleTable").stupidtable();
 	var b = $("#simpleTable2").stupidtable();
+	a.add(b).bind('aftertablesort', function (event, data) {
+		$(this).find('tbody td').css('padding-top','');
+	});
+	
+	//table scroll
 	var table = $("#simpleTable");
 	var table2 = $("#simpleTable2");
-	a.add(b).bind('aftertablesort', function (event, data) {
-		$(this).find('tbody td').removeAttr('class');
-		$.each($(this).find('tbody tr')[0].children,function(i,o){
-			$(this).addClass("td1");
-		});
-	});
 	$(window).scroll(function() {
 		var windowTop = $(window).scrollTop(); 
 		if(windowTop > table.offset().top) 
@@ -18,18 +21,30 @@ $( document ).ready(function() {
 		}
 		else 
 		{
-			$("thead", table).removeClass("Fixed").css("top", "108px");
-		}; 
-		if (windowTop > table2.offset().top) 
+			$("thead", table).removeClass("Fixed").css("top", high+"px");
+		}
+		if(windowTop > table2.offset().top) 
 		{
 			$("thead", table2).addClass("Fixed").css("top", windowTop);
 		}
 		else 
 		{
-			$("thead", table2).removeClass("Fixed").css("top", "108px");
+			$("thead", table2).removeClass("Fixed").css("top", high+"px");
 		}
 	});
+
+	//click refresh tr padding-top, thead top
+	$('#ui-id-2').add($('#ui-id-3')).bind('click', function(){
+		high = 	$(this).offset().top;
+	//	$("thead", table).css("top", high+"px");
+	})
+
 });
+
+
+
+
+
 function searchA(text){
 	$.each($("#simpleTable tbody").find("tr"), function() {
 		if($($(this).find('td')[0]).text().toLowerCase().indexOf(text.toLowerCase()) != -1||$($(this).find('td')[1]).text().toLowerCase().indexOf(text.toLowerCase()) != -1)
