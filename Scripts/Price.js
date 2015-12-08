@@ -7,9 +7,9 @@ $( document ).ready(function() {
 	var a = $("#simpleTable").stupidtable();
 	var b = $("#simpleTable2").stupidtable();
 	a.add(b).bind('aftertablesort', function (event, data) {
-		$(this).find('tbody tr').css('padding-top','');
+		$(this).find('tbody td').css('padding-top','');
 		var theadhigh = $("thead", $(this)).height();
-		$($("tr", $(this))[1]).find('td').css("padding-top", theadhigh+"px");
+		$($("tbody tr:visible", $(this))[0]).find('td').css("padding-top", theadhigh+"px");
 	});
 	
 	//table scroll
@@ -45,7 +45,7 @@ $( document ).ready(function() {
 		theadhigh = $("thead", table2).height();
 		$($("tr", table2)[1]).find('td').css("padding-top", theadhigh+"px");
 	})
-
+	
 });
 
 
@@ -56,6 +56,7 @@ function searchA(text){
 	$.each($("#simpleTable tbody").find("tr"), function() {
 		if($($(this).find('td')[0]).text().toLowerCase().indexOf(text.toLowerCase()) != -1||$($(this).find('td')[1]).text().toLowerCase().indexOf(text.toLowerCase()) != -1)
 		{
+			
 			$(this).show();
 		}
 		else
@@ -63,6 +64,9 @@ function searchA(text){
 			$(this).hide();
 		}
 	});
+	$('#simpleTable').find('tbody td').css('padding-top','');
+	var theadhigh = $("thead", $('#simpleTable')).height();
+	$($("tbody tr:visible", $('#simpleTable'))[0]).find('td').css("padding-top", theadhigh+"px");
 } 
 function searchB(text){
 	$.each($("#simpleTable2 tbody").find("tr"), function() {
@@ -75,4 +79,7 @@ function searchB(text){
 			$(this).hide();
 		}
 	});
+	$('#simpleTable2').find('tbody td').css('padding-top','');
+	var theadhigh = $("thead", $('#simpleTable2')).height();
+	$($("tbody tr:visible", $('#simpleTable2'))[0]).find('td').css("padding-top", theadhigh+"px");
 }

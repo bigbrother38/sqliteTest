@@ -37,9 +37,7 @@ Table {
 	word-wrap : break-word
 }
 
-.td1{
-    padding-top:50px;//fixed width
-}
+
 
 @media only screen and (max-width: 1024px) {
     
@@ -47,16 +45,7 @@ Table {
     //width:70px;//fixed width
 	}
 	
-	#simpleTable .td1{
-		padding-top:100px;//fixed width
-	}
-	#simpleTable .td3{
-		padding-top:25px;//fixed width
-	}
 	
-	#simpleTable2 .td1{
-		padding-top:70px;//fixed width
-	}
 	#simpleTable th,#simpleTable td{
 		//width:68px;//fixed width
 	}
@@ -64,16 +53,12 @@ Table {
 
 @media only screen and (max-width: 1240px) {
     
-	#simpleTable .td1{
-		padding-top:70px;//fixed width
-	}
+	
 	
 	
 }
 @media only screen and (max-width: 880px) {
     
-	#simpleTable .td1,#simpleTable2 .td1{
-		padding-top:90px;//fixed width
-	}
+	
 	
 }
