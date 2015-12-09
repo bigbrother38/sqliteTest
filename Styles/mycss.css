@@ -28,7 +28,7 @@ Table {
 		table-layout: fixed;
 		width:100%;
 	}
-	#simpleTable3 {
+	#simpleTable3,#simpleTable4,#simpleTable5,#simpleTable6,#simpleTable7,#simpleTable8 {
 		width: inherit;
 	}
 #simpleTable th,#simpleTable td{

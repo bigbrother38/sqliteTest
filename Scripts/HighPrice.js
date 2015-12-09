@@ -2,10 +2,20 @@ var high;
 $( document ).ready(function() {
 	$( "#tabs" ).tabs(); 
 	
+	//setTapTitle
+	$('div [class*="ui-tabs-panel"] div:nth-of-type(1)').each(function(i,o){
+		if( i!= 0){
+			//$($('li [class*="ui-tabs-anchor"]')[i]).text($(this).text().substring(5)+"篩選資料");
+		}
+	})
+	
+	
 	//sort
-	var a = $("#simpleTable3").stupidtable();
+	var a = $("table").stupidtable();
 	a.bind('aftertablesort', function (event, data) {
 		$(this).find('tbody td').css('padding-top','');
+		var theadhigh = $(this).find("thead").height();
+		$("tbody tr:nth-of-type(1)").find('td').css("padding-top", theadhigh+"px");
 	});
 	
 	//table scroll
@@ -23,9 +33,13 @@ $( document ).ready(function() {
 	})	
 	
 	//click refresh tr padding-top, thead top
-	$('#ui-id-2').bind('click', function(){
-		high = $('ul').height()+8;
-		$("thead", table).css("top", high+"px");
+	$('li').bind('click', function(){
+		high = $('ul').height()+50;
+		$("thead").css("top", high+"px");
+		$('thead').each(function() {
+			if($(this).height()>0)
+			$("tbody tr:nth-of-type(1)").find('td').css("padding-top", $(this).height()+"px");
+		});
 	})
 	
 });
