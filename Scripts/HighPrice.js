@@ -5,7 +5,7 @@ $( document ).ready(function() {
 	//setTapTitle
 	$('div [class*="ui-tabs-panel"] div:nth-of-type(1)').each(function(i,o){
 		if( i!= 0){
-			//$($('li [class*="ui-tabs-anchor"]')[i]).text($(this).text().substring(5)+"篩選資料");
+			$($('li [class*="ui-tabs-anchor"]')[i]).text($(this).text().substring(5)+"篩選資料");
 		}
 	})
 	
