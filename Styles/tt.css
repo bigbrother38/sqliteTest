@@ -164,7 +164,7 @@ img {
     font-size: 20px;
     text-align: center;
     border-bottom: none;
-    background: url('../img/invite-title-bg@2x.png') center center no-repeat;
+    background: url('img/logo.gif') center center no-repeat;
     background-size: cover;
 }
 .invite-code .content {
