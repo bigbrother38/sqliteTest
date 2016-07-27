@@ -1,0 +1,397 @@
+
+/* normal layout */
+html,
+body {
+    padding: 0;
+    margin: 0;;
+    /* font-family: "Lucida Grande", "Lucida Sans Unicode", "STHeitiTC-Light", "Microsoft JhengHei", "å¾®è??­£é»???", "Microsoft YaHei", "å¾®è½¯??é»?","??ç´°æ?????", Arial, sans-serif; */
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,
+input,
+textarea,
+select,
+button {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "liga", "kern";
+}
+
+:focus {
+    outline: 0;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+
+html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+
+.btn {
+    text-align: center;
+}
+.btn-orange {
+    width: 100%;
+    padding: 13px 0;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    border-radius: 5px;
+    background: #E87C07;
+    border: none;
+}
+
+
+
+/* style */
+.recommond-gift {
+    background: #F5F5F5;
+}
+.recommond-gift .wrap {
+    padding: 15px;
+    background: #F5F5F5;
+}
+.recommond-gift .title {
+    max-height: 127px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    color: #009B4A;
+    font-size: 20px;
+    line-height: 1.4;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+    border-bottom: 1px solid #CCCCCC;
+}
+.recommond-gift .gift-img {
+    margin-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
+.recommond-gift .gift-status {
+    width: 100%;
+    z-index: 2;
+    position: absolute;
+    top: 73%;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.recommond-gift .gift-bg {
+    z-index: 1;
+}
+.recommond-gift .gift-bg img {
+    max-width: 80%;
+
+}
+.recommond-gift .status-wording {
+    margin-bottom: 15px;
+    color: #323232;
+    font-size: 16px;
+    line-height: 1.4;
+}
+.recommond-gift .note {
+    margin-bottom: 30px;
+    color: #676767;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+.invite-code {
+    background: #F5F5F5;
+}
+.invite-code .wrap {
+    padding: 0;
+}
+.invite-code .title {
+    height: 64px;
+    margin-bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: none;
+    background: url('../img/invite-title-bg@2x.png') center center no-repeat;
+    background-size: cover;
+}
+.invite-code .content {
+    padding: 10px 20px 20px 20px;
+}
+.invite-code .invite-img-code .img {
+    margin: 0 auto 5px auto;
+    text-align: center;
+}
+.invite-code .invite-img-code .img img {
+    width: 72px;
+    height: 72px;
+}
+.invite-code .invite-img-code .sub-title {
+    margin-bottom: 20px;
+    color: #015127;
+    font-size: 21px;
+}
+.invite-code .invite-img-code .wording {
+    margin: 0 auto 10px auto;
+    font-size: 13px;
+}
+.invite-code .invite-img-code .copy-worindg {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #999;
+    font-size: 13px;
+}
+.invite-code .invite-img-code .use-chrome {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    color: #999;
+    font-size: 13px;
+}
+.invite-code .invite-img-code .code {
+    width: 55%;
+    padding: 5px 0;
+    margin: 0 auto 5px auto;
+    color: #009B4A;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #7E7E7E;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.invite-code .invite-img-code .btn-green {
+    padding: 10px 0;
+    width: 55%;
+    margin: 10px auto 30px auto;
+    color: #fff;
+    font-size: 14px;
+    background: #009B4A;
+    border: none;
+    border-radius: 3px;
+}
+.invite-code .share-wording {
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+.invite-code .btn-orange {
+    width: 100%;
+    background: #E87C07;
+    border: none;
+    border-radius: 3px;
+}
+.invite-code .dialog-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+.invite-code .dialog-mask {
+    width: calc(100vw);
+    height: calc(100vh);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0, .3);
+}
+.invite-code .dialog-content {
+    padding: 20px 0;
+    width: calc(46vw);
+    text-align: center;
+    background: #fff;
+    position: relative;
+    left: calc(27vw);
+    top: calc(30vh);
+    z-index: 5;
+    border-radius: 5px;
+}
+.invite-code .dialog-content img {
+    width: 48px;
+    height: 48px;
+}
+.invite-code .dialog-wording {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+/* media query */
+@media screen and (min-width: 1000px) and (max-width: 1280px) {
+
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 1025px){
+
+
+
+
+
+}
+
+
+
+
+
+
+/* 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 979 */
+@media screen and (max-width: 979px){
+
+
+
+
+
+
+}
+
+
+
+
+/* 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 768 */
+@media screen and (max-width: 768px) {
+
+
+
+
+}
+
+
+
+
+
+
+
+/* 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 640 */
+@media screen and (max-width: 640px){
+
+
+
+
+}
+
+
+
+
+/* 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 480 */
+@media screen and (max-width: 480px){
+
+
+
+
+}
+
+
+
+
+
+/* 320 320 320 320 320 320 320 320 320 320 320 320  320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 320 */
+@media screen and (max-width: 320px){
+
+
+
+
+
+}
+
+
+
+
+
+/* iPhone < 5 */
+@media screen and (device-aspect-ratio: 2/3) {
+    .gift-status {
+        top: 70%;
+    }
+
+}
+
+/* iPhone 5 */
+@media screen and (device-aspect-ratio: 40/71) {
+    .gift-status {
+        top: 70%;
+    }
+}
+
+
+/* iPhone 6 */
+@media screen and (device-aspect-ratio: 375/667) {
+
+}
+
+/* iPhone 6 plus */
+@media screen and (device-aspect-ratio: 16/9) {} {
+
+}
+
+/* iPad */
+@media screen and (device-aspect-ratio: 3/4) {} {
+
+}
