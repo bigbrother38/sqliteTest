@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<!--
+
+-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-TW"><![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="zh-TW"><![endif]-->
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta property="og:title" content="凱擘大寬頻優惠">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../img/homeplay_pic-03.png">
+    <meta property="og:site_name" content="My Rewards">
+    <meta property="og:description" content="輸入您收到的邀請碼，註冊成功後，即可獲得好友分享禮喔！">
+    <title>凱擘大寬頻優惠</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
+</head>
+<script language="JavaScript" type="text/JavaScript">
+		window.onload = trans;
+		function trans()
+		{
+          var inviteCode = window.location.hash.substring(1);
+		  document.getElementById("code").value = inviteCode;  
+		
+		}			
+</script>
+<body class="invite-code">
+
+    <div class="wrap ">
+        <div class="title"></div>
+        <div class="content">
+            <div class="invite-img-code text-center">
+                <div class="img">
+                    <img src="../img/invite-bg@2x.png" alt="">
+                </div>
+                <div class="sub-title">凱擘大寬頻優惠</div>
+                <div class="wording">您收到的邀請碼：</div>
+                <input type="text" id="code" class="code" value="test001234" readonly="readonly"></input>
+                <div class="copy-worindg">*長按邀請碼可複製</div>
+            </div>
+            <div class="share-wording">輸入您收到的邀請碼，註冊成功後，即可獲得好友分享禮喔！</div>
+
+            <div class="btn">
+                <button class="btn-orange" onclick="javascript:location.href='https://www.cathayholdings.com/holdings/web/event/myrewards/checkmobile.html'">立即下載 App</button>
+            </div>
+        </div><!--/content-->
+    </div><!--/wrap-->
+
+
+    <div class="dialog-wrap">
+        <div class="dialog-mask"></div>
+        <div class="dialog-content">
+            <img src="../img/homeplay_pic-03.png" alt="">
+            <div class="dialog-wording">邀請碼複製成功</div>
+        </div>
+    </div>
+
+
+
+    <script>
+    (function() {
+        'use strict';
+        // click events
+        document.body.addEventListener('click', copy, true);
+        // event handler
+        function copy(e) {
+            // find target element
+            var
+            t = e.target,
+            c = t.dataset.copytarget,
+            inp = (c ? document.querySelector(c) : null);
+
+            // is element selectable?
+            if (inp && inp.select) {
+                // select text
+                inp.select();
+
+                try {
+                    // copy text
+                    document.execCommand('copy');
+                    inp.blur();
+
+                    // copied animation
+                    // t.classList.add('copied');
+                    // setTimeout(function() { t.classList.remove('copied'); }, 1500);
+
+                    // alert('copied');
+                }
+                catch (err) {
+                    // alert('please press Ctrl/Cmd+C to copy');
+                }
+            }
+        }
+    })();
+
+    $(document).ready(function() {
+        $('.copy-code').on('click', function() {
+            $('.dialog-wrap').fadeIn().delay(1000).fadeOut(400);
+        });
+    });
+    </script>
+
+</body>
+</html>
