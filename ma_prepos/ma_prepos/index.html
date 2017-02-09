@@ -49,7 +49,6 @@
 		</div>
 		<div class="bg-mask"></div>
 		<section class="area-vedio position-relative">
-		
 			<div class="video-bg">
 				<div class="vedio-bg-cover"></div>
           		<video autoplay muted playsinline preload="" loop=""><source src="images/ma/vedio.mp4" type="video/mp4"></video>
@@ -971,7 +970,10 @@
 			
 			});
 		// multiple videos
-			
+			enableInlineVideo(video);
+			video.addEventListener('touchstart', function () {
+			    video.play();
+			});
 			$('video').each(function () {
 			    enableInlineVideo(this);
 			});
