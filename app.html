@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<!--
+
+-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-TW"><![endif]-->
+<!--[if gt IE 8]><html class="no-js" lang="zh-TW"><![endif]-->
+<html lang="zh-TW">
+
+<head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    
+</head>
+<script language="JavaScript" type="text/JavaScript">
+		var items = ["red","green","black","blue"];
+		var items2 = ["你是不是覺得老闆很機掰"
+		             ,"今天事情是不是超級多"
+					 ,"搭車是不是很耗時間"
+					 ,"是不是很想中樂透"];
+		
+		$(document).ready(function() {
+			$('.btn-orange').on('click', function() {
+				var randomItem = trans(items);
+				var randomItem2 = trans(items2);
+				document.body.style.background = randomItem;
+				$('#word').text(randomItem2);
+			});
+		});
+	
+		function trans(item)
+		{
+			if (item.length == 0 )
+			{
+				items = ["red","green","black","blue"];
+				items2 = ["你是不是覺得老闆很機掰" 
+						 ,"今天事情是不是超級多" 
+						 ,"搭車是不是很耗時間" 
+						 ,"是不是很想中樂透"];
+			}
+			var r = Math.floor(Math.random()*item.length);
+			var txt = item[r];
+			item.splice(r,1);
+			return txt;
+		}			 
+</script>
+<body class="invite-code" style="background:black;">
+
+    <div class="wrap" style="position:absolute; left:50%; top:50%;">
+        <div class="title">
+			<label id = "word" style="color:White;">無聊APP，快按我!</label>
+		</div>
+		<br/>
+        <div class="content" style="position:relative; left:50px; ">
+            
+            <button class="btn-orange" style="width:50px;">是</button>
+        </div><!--/content-->
+    </div><!--/wrap-->
+
+    
+
+</body>
+</html>
