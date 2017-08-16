@@ -13,26 +13,32 @@
     
 </head>
 <script language="JavaScript" type="text/JavaScript">
-		var items = ["red","green","black","blue"];
+		var items = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119'];
 		var items2 = ["你是不是覺得老闆很機掰"
 		             ,"今天事情是不是超級多"
 					 ,"搭車是不是很耗時間"
 					 ,"是不是很想中樂透"];
-		
+		var height = 300; //按鈕可能上下移動的距離
+
+　　var width = 50; //按鈕可能左右移動的距離
+	var t;
 		$(document).ready(function() {
-			$('.btn-orange').on('click', function() {
+			$('#btnA').on('click', function() {
 				var randomItem = trans(items);
-				var randomItem2 = trans(items2);
-				document.body.style.background = randomItem;
-				$('#word').text(randomItem2);
+				//var randomItem2 = trans(items2);
+				//document.body.style.background = randomItem;
+				//$('#btnA').css('background-color', randomItem);
+				//$('#word').text(randomItem2);
+				$('#imageA').attr('src', "img/" + randomItem + ".jpg");
 			});
+			//move($('#btnA'));
 		});
 	
 		function trans(item)
 		{
 			if (item.length == 0 )
 			{
-				items = ["red","green","black","blue"];
+				items = items = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119'];
 				items2 = ["你是不是覺得老闆很機掰" 
 						 ,"今天事情是不是超級多" 
 						 ,"搭車是不是很耗時間" 
@@ -42,18 +48,50 @@
 			var txt = item[r];
 			item.splice(r,1);
 			return txt;
-		}			 
+		}		
+
+	
+　　
+
+　　function move(obj) {
+
+　　obj.css('position','absolute');
+
+　　obj.css('top',Math.random() * height + "px");
+
+　　obj.css('left',Math.random() * width + "px");
+
+	t=setTimeout("move($('#btnA'));",1000)
+　　}
+
+　　function cancel() {
+
+　　//alert("你已放棄領獎,謝謝！");
+
+　　//window.close();
+
+　　}		
 </script>
 <body class="invite-code" style="background:black;">
 
-    <div class="wrap" style="position:absolute; left:20%; top:30%;">
+    <div class="wrap" style="position:absolute; left:25%; top:0%;">
         <div class="title">
 			<label id = "word" style="color:White; font-size:18pt;">無聊APP，快按我!</label>
+			<div class="content" style=" ">
+            
+			<button id="btnA" style="width:50px;height:50px;border-radius:25px;border-style:none; background-color:black;">
+<img style="width:50px;height:50px;border-radius:25px;" src="img/aa.jpg">
+</button>
+　　</div>
+		</div>
+		</div>
+		<div class="wrap" style="position:absolute; left:20%; top:15%;">
+		<div class="title">
+			<img id = "imageA" style="width:400px;" src=""></img>
 		</div>
 		<br/>
-        <div class="content" style="position:relative; left:70px; ">
+        
             
-            <button class="btn-orange" style="width:50px;">是</button>
         </div><!--/content-->
     </div><!--/wrap-->
 
