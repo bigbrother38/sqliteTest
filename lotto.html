@@ -1,0 +1,92 @@
+<form>
+輸入挑選幾組號碼<br>
+<input name="num1" id="num1" type="number" value="1" align="center" class="formc1"><br>
+
+
+輸入起始號碼<br>
+<input name="numstart" type="number" id="numstart" value="1" align="center" class="formc1"><br>
+
+輸入結束號碼<br>
+<input name="numend" type="number" id="numend" value="100" align="center" class="formc1"><br>
+
+輸入選號秒數<br>
+<input name="numsec" type="number" id="numsec" value="1" align="center" class="formc1"><br>
+
+<input type="button" value="開始計算挑選" class="formc2" onclick="lotto();StOp();saveComplexData()">
+      <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- lotto15 -->
+<ins class="adsbygoogle adslot_1" data-ad-client="ca-pub-6363297981371690" data-ad-slot="5680641728" data-adsbygoogle-status="done" style="width: 728px; height: 15px;"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><ins id="aswift_2_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent;"><iframe width="728" height="15" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;width:728px;height:15px;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</form>
+
+<span id="layer1" class="a1"></span>
+
+<script language="JavaScript">
+ 
+function saveComplexData() {
+console.log("Saving complex data to local storage.");
+
+    var personObject = new Object();
+    personObject.stdiy = num1.value;
+    personObject.stdiy2 = numstart.value;
+    personObject.stdiy3 = numend.value;
+
+
+    localStorage.setItem("person", JSON.stringify(personObject));
+ }
+
+      
+	function lotto(){
+	var totalnumbers = parseInt(document.getElementById("num1").value);
+	var lowerbound=parseInt(document.getElementById("numstart").value);
+	var upperbound=parseInt(document.getElementById("numend").value);
+	
+	B=' ';	
+	LottoNumbers=new Array();	
+	 for (i = 1; i <= totalnumbers; i++)
+	 {
+	 RandomNumber = Math.round(lowerbound+Math.random()*(upperbound-lowerbound));
+	  for (j = 1; j <= totalnumbers; j)
+	  {
+	  if (RandomNumber == LottoNumbers[j])
+	    {
+	     RandomNumber=Math.round(lowerbound+Math.random()*(upperbound-lowerbound));
+	     j=0;
+	    }
+	  j++;
+	  }
+	 LottoNumbers[i]=RandomNumber;
+	 }
+	LottoNumbers=LottoNumbers.toString();
+	X=LottoNumbers.split(',');
+	 for (i=0; i < X.length; i++)
+	 {
+	 X[i]=X[i]+' ';
+	 if (X[i].length==2) 
+	 X[i]='0'+X[i];
+	 } 
+	X=X.sort();
+	 for (i=0; i < X.length; i++)
+	 {
+	 OutPut=B+=X[i];
+	 }
+	if (document.all)document.all.layer1.innerHTML=OutPut;
+	if (document.getElementById)document.getElementById("layer1").innerHTML=OutPut;
+	if (document.layers){
+	  document.layers.layer1.document.open();
+	  document.layers.layer1.document.write("<span style='position:absolute;top:0px;left:0px;font-family:Verdana;font-size:60px;color:#000000;text-align:center'> "+OutPut+"</span>");
+	  document.layers.layer1.document.close();
+	  }
+	  T=setTimeout('lotto()',20);
+	//window.status=OutPut;
+	}
+	function StOp(){
+	var sec=parseInt(document.getElementById("numsec").value);	
+	 setTimeout('clearTimeout(T)',sec * 1000);
+	}
+	//-->
+	
+	
+	</script>
