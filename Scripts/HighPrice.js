@@ -1,7 +1,7 @@
 var high; 
 $( document ).ready(function() {
 	$( "#tabs" ).tabs(); 
-	
+	$('li').click();
 	//setTapTitle
 	$('div [class*="ui-tabs-panel"] div:nth-of-type(1)').each(function(i,o){
 		if( i!= 0){
@@ -34,12 +34,19 @@ $( document ).ready(function() {
 	
 	//click refresh tr padding-top, thead top
 	$('li').bind('click', function(){
-		high = $('ul').height()+50;
+		if(document.URL.indexOf('BreakNewHigh')>0)
+		{
+			high = $('ul').height()+30;
+		}
+		else
+		{
+			high = $('ul').height()+50;
+		}
 		$("thead").css("top", high+"px");
 		$('thead').each(function() {
 			if($(this).height()>0)
 			$("tbody tr:nth-of-type(1)").find('td').css("padding-top", $(this).height()+"px");
 		});
 	})
-	
+	$('li').click();
 });
