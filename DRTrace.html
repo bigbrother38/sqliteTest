@@ -1,0 +1,135 @@
+﻿<html>
+<head>
+    <title>除權息追蹤</title>
+    <link rel='icon' href='images/money.ico' type='image/ico' />
+    <script src='Scripts/jquery-1.10.2.js'></script>
+    <script src='Scripts/jquery-ui.js'></script>
+    <script type='text/javascript' src='Scripts/jQuery.mmenu-master/dist/jquery.mmenu.all.js'></script>
+    <script type='text/javascript' src='Scripts/jquerydataTables/jquery.dataTables.min.js'></script>
+    <script src='Scripts/HighPrice.js'></script>
+    <link type='text/css' rel='stylesheet' href='Scripts/jquerydataTables/jquery.dataTables.min.css'>
+    <link type='text/css' rel='stylesheet' href='Scripts/jQuery.mmenu-master/dist/jquery.mmenu.all.css' />
+    <link rel='stylesheet' href='Styles/mycss.css'>
+    <link rel='stylesheet' href='Styles/jquery-ui.css'>
+</head>
+
+<body>
+<div class='page'>
+    <div class='header'>
+        <a href='#menu'><span></span></a>除權息追蹤
+    </div>
+    <div class='link'>
+        <ul>
+            <li>
+                <a href='https://bigbrother38.github.io/sqliteTest/Price.html'>股票估價</a>
+            </li>	
+            <li>
+                <a href='https://bigbrother38.github.io/sqliteTest/DRTrace.html'>除權息追蹤</a>
+            </li>
+            <li>
+                <a href='https://bigbrother38.github.io/sqliteTest/HighPrice.html'>強勢股</a>
+            </li>
+            <li>
+                <a href='https://bigbrother38.github.io/sqliteTest/BreakNewHigh.html'>明日可能破新高個股</a>
+            </li>
+        </ul>
+    </div>
+	<div id='headerHolder' style='height: 41px;'></div>
+
+<div class='content'>
+<div class='dataTitle'>
+<span>最後更新日期：2018/3/5 上午 12:00:48</span>
+</div>
+        <div class='scrollmenu'>
+			<input type='button' data-href='tabs-1' value='除權息資料追蹤'>
+
+			<input type='button' data-href='tabs-2' value='除權息資料追蹤(已過)'>
+
+        </div>
+<div id='tab'>
+<div id='tabs-1'>
+<table id='simpleTable3' class='display' cellspacing='0' width='100%' data-orderIndex='2' data-sort='asc'><thead>
+<tr>
+<th>代號</th>
+<th>名稱</th>
+<th>除權息日</th>
+<th>股利</th>
+<th>當前股價</th>
+<th>殖利率</th>
+<th>除權息前2天</th>
+<th>除權息前天</th>
+<th>除權息當天</th>
+<th>除權息隔天</th>
+<th>除權息當天賣出獲利</th>
+<th>除權息當天賣出獲利(%)</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>代號</th>
+<th>名稱</th>
+<th>除權息日</th>
+<th>股利</th>
+<th>當前股價</th>
+<th>殖利率</th>
+<th>除權息前2天</th>
+<th>除權息前天</th>
+<th>除權息當天</th>
+<th>除權息隔天</th>
+<th>除權息當天賣出獲利</th>
+<th>除權息當天賣出獲利(%)</th>
+</tr>
+</tfoot>
+<tbody><tr><td align='center'><a href='https://tw.stock.yahoo.com/q/ta?s=9105' title='近期走勢' target='_blank'>9105</a></td><td align='center'>泰金寶-DR</td><td align='center'>2018/03/19</td><td align='center'>0.04</td><td align='center'>2.94</td><td align='center'>1.36%</td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td><td align='center'></td></tr></tbody></table></div><div id='tabs-2' style='display: none;'><table id='simpleTable4' class='display' cellspacing='0' width='100%' data-orderIndex='2' data-sort='asc'><thead>
+<tr>
+<th>代號</th>
+<th>名稱</th>
+<th>除權息日</th>
+<th>股利</th>
+<th>當前股價</th>
+<th>殖利率</th>
+<th>除權息前2天</th>
+<th>除權息前天</th>
+<th>除權息當天</th>
+<th>除權息隔天</th>
+<th>除權息當天賣出獲利</th>
+<th>除權息當天賣出獲利(%)</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<th>代號</th>
+<th>名稱</th>
+<th>除權息日</th>
+<th>股利</th>
+<th>當前股價</th>
+<th>殖利率</th>
+<th>除權息前2天</th>
+<th>除權息前天</th>
+<th>除權息當天</th>
+<th>除權息隔天</th>
+<th>除權息當天賣出獲利</th>
+<th>除權息當天賣出獲利(%)</th>
+</tr>
+</tfoot>
+<tbody></tbody></table></div></div></div>
+<footer class='footer fixed'>
+    <div class='footer-below'>
+         <div class='container'>
+             <p class='copyright'>© 2017 by WeiChun Wu</p>
+         </div>
+    </div>
+</div>
+
+<nav id='menu'>
+    <ul>
+         <li><a href='https://bigbrother38.github.io/sqliteTest/Price.html'>股票估價</a></li>
+         <li><a href='https://bigbrother38.github.io/sqliteTest/DRTrace.html'>除權息追蹤</a></li>
+         <li><a href='https://bigbrother38.github.io/sqliteTest/HighPrice.html'>強勢股</a></li>
+         <li><a href='https://bigbrother38.github.io/sqliteTest/BreakNewHigh.html'>明日可能破新高個股</a></li>
+     </ul>
+</nav>
+
+</div>
+</body>
+</html>
