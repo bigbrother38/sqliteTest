@@ -1,5 +1,19 @@
-th[data-sort]{
-  cursor:pointer;
+body
+{
+	margin:0px;
+}
+.header
+{
+	display:none;
+	position: fixed;
+}
+#headerHolder
+{
+	display:none;
+}
+.link
+{
+	display:block;
 }
 .tapcontent{
 	margin-left:10px;
@@ -13,43 +27,268 @@ th[data-sort]{
 .green{
 	color:green;
 }
-thead th {
+thead th,  tfoot th{
     background: #724a10;
     color: #fff;
 }
-thead
+
+.dataTables_length
 {
-    position: absolute;
+	padding:0 0 10px 0;
 }
-table th,table td{
-    width:130px;//fixed width
+
+div.scrollmenu {
+    
+    overflow: auto;
+    white-space: nowrap;
+	margin-bottom:10px;
 }
-Table {
-		table-layout: fixed;
-		width:100%;
-	}
-	#simpleTable3,#simpleTable4,#simpleTable5,#simpleTable6,#simpleTable7,#simpleTable8 {
-		width: inherit;
-	}
+
+div.scrollmenu span {
+	cursor: pointer;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+	vertical-align:center;
+	line-height:30px;
+	padding: .5em 1em;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+div.scrollmenu span:hover {
+    background-color: #777;
+}
+
+.tabspan
+{
+	margin-bottom:10px;
+}
+	
 #simpleTable th,#simpleTable td{
     width:150px;//fixed width
 	word-break: break-all;
 	word-wrap : break-word
 }
 
-
-
-@media only screen and (max-width: 1024px) {
-    
-	table th,table td{
-    //width:70px;//fixed width
-	}
-	
-	
-	#simpleTable th,#simpleTable td{
-		//width:68px;//fixed width
-	}
+.link 
+{
+	line-height:40px;
+	background-color:black;
 }
+.link > ul {
+	list-style:none;
+	-webkit-padding-start: 20px;
+	margin-bottom: 10px;
+}
+
+.link li
+{
+	display:inline;
+	padding:0px 20px;
+}
+
+.link a {
+	color:white;
+	text-decoration:none;
+}
+
+.link a:hover
+{
+	background: transparent;
+	color: #FF6600;
+}
+
+.content
+{
+	margin:10px;
+}
+.content > span
+{
+	margin-right:10px;
+}
+
+.dataTitle
+{
+	margin-bottom:10px;
+}
+
+#tab
+{
+	
+	padding: 0 0 25px 0;
+	
+}
+
+@media screen and (max-width: 991px) {
+.dataTitle,div.scrollmenu,.tabspan
+{
+	margin-bottom:20px;
+}
+.dataTable
+{
+	font-size:24px;
+}
+html, body
+{
+	padding: 0;
+	margin: 0;
+}
+body
+{
+	background-color: #fff;
+	font-family: Arial, Helvetica, Verdana;
+	font-size: 30px;
+	line-height: 22px;
+	color: #666;
+	position: relative;
+	-webkit-text-size-adjust: none;
+}
+body *
+{
+	text-shadow: none;
+}
+h1, h2, h3, h4, h5, h6
+{
+	line-height: 1;
+	font-weight: bold;
+	margin: 20px 0 10px 0;
+}
+h1, h2, h3
+{
+	font-size: 26px;
+}
+h4, h5, h6
+{
+	font-size: 16px;
+}
+p
+{
+	margin: 0 0 20px 0;
+}
+
+select
+{
+	font-size:20px;
+}
+
+label > input{
+	font-size:20px; 	
+}
+
+.mm-listview {
+    line-height: 50px;
+}
+.mm-listitem:after {
+    left:0;
+}
+
+nav:not(.mm-menu)
+{
+	display: none;
+}
+
+.header,#headerHolder
+{
+	display:block;
+}
+
+.link
+{
+	display:none;
+}
+
+div.scrollmenu input
+{
+	font-size:20px;
+}
+
+.header
+{
+	background: #777;
+	//font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+	z-index: 999;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+	width: 100%;
+	height: 40px;
+	
+}
+.header.fixed
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.header a
+{
+	display: block;
+	width: 28px;
+	height: 18px;
+	padding: 11px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.header a:before,
+.header a:after
+{
+	content: '';
+	display: block;
+	background: #fff;
+	height: 3px;
+}
+.header a span
+{
+	background: #fff;
+	display: block;
+	height: 3px;
+	margin: 6px 0;
+}
+
+.tapcontent > pre > span
+{
+	line-height:30px;
+}
+
+}
+
+
+
+footer.fixed 
+{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 883; 
+}
+
+
+footer .footer-below 
+{
+  background: #F7F7F7;
+  color: #4A4A4A;
+  
+}
+  
+  
+footer .footer-below .copyright 
+{
+	color: #82776f;
+    padding: 5px 0;
+    margin: 0 auto; 
+	text-align: center;
+	font-size: 12px; 
+}
+
+
 
 @media only screen and (max-width: 1240px) {
     

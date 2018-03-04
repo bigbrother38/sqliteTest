@@ -69,6 +69,8 @@ QUnit.done(function(){
     $("#basic").stupidtable();
     $("#basic-colspan").stupidtable();
     $("#complex-colspan").stupidtable();
+    $("#stability-test").stupidtable();
+    $("#multicolumn-sort-test").stupidtable();
     $("#qunit-fixture").removeClass("test-hidden");
 });
 
@@ -591,6 +593,280 @@ asyncTest("Basic individual column sort - force direction", function(){
     test_table_state(function(){
         var expected = ["-858", "-152.5", "-.18", "36", "88.5"];
         var vals = get_column_elements($table, FLOAT_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("Sort Stability Testing - 1", function(){
+    // Not all browsers implement stable sorting. View the following for more
+    // information:
+    // http://ofb.net/~sethml/is-sort-stable.html
+    // http://codecoding.com/beware-chrome-array-sort-implementation-is-unstable/
+    var INDEX_COLUMN = 0;
+    var LETTER_COLUMN = 1;
+    var $table = $("#stability-test");
+    var $table_cols = $table.find("th");
+
+    $table.stupidtable();
+    $table_cols.eq(LETTER_COLUMN).click();
+
+    test_table_state(function(){
+        var expected = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+        var vals = get_column_elements($table, INDEX_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("Sort Stability Testing - 2", function(){
+    // Not all browsers implement stable sorting. View the following for more
+    // information:
+    // http://ofb.net/~sethml/is-sort-stable.html
+    // http://codecoding.com/beware-chrome-array-sort-implementation-is-unstable/
+    var INDEX_COLUMN = 0;
+    var LETTER_COLUMN = 1;
+    var $table = $("#stability-test");
+    var $table_cols = $table.find("th");
+
+    $table.stupidtable();
+    $table_cols.eq(LETTER_COLUMN).doubleclick();
+
+    test_table_state(function(){
+        var expected = ["10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0"];
+        var vals = get_column_elements($table, INDEX_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("$th passed to after/before tablesort event handlers", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+    var $th_objs = [];
+
+    $table.stupidtable();
+    var $int_header = $table_cols.eq(INT_COLUMN)
+
+    $table.bind('beforetablesort', function(e, data){
+        $th_objs.push(data.$th);
+    });
+    var afterCalls = 0;
+    $table.bind('aftertablesort', function(e, data){
+        $th_objs.push(data.$th);
+    });
+
+    $int_header.click();
+
+    var get_raw_elements = function(arr){
+        return _.map(arr, function(el){
+            return el[0];
+        });
+    };
+
+    test_table_state(function(){
+        var expected = get_raw_elements([$int_header, $int_header]);
+        var raw_th_objs = get_raw_elements($th_objs);
+        ok(_.isEqual(raw_th_objs, expected));
+    });
+});
+
+asyncTest("consective calls to stupidsort in same direction should work (issue #183) ", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+    var $int_col = $table_cols.eq(INT_COLUMN);
+    var $e_td = $table.find("[data-sort-value=2]");
+
+    $table.stupidtable();
+    $table_cols.eq(INT_COLUMN).stupidsort($.fn.stupidtable.dir.ASC);
+
+    // Verify we have td with the value 2 in the INT column.
+    ok(_.isEqual($e_td.text(), "2"));
+
+    setTimeout(function(){
+        var newval = -100;
+        $e_td.updateSortVal(newval);
+        $e_td.text(newval);
+
+        $table_cols.eq(INT_COLUMN).stupidsort($.fn.stupidtable.dir.ASC);
+
+
+        test_table_state(function(){
+            var expected = ["-100", "-53", "15", "95", "195"];
+            var vals = get_column_elements($table, INT_COLUMN);
+            ok(_.isEqual(vals, expected));
+        });
+
+    }, window.WAIT_TIME_MS);
+});
+
+asyncTest("table sorts column onload when specified (issue #180) ", function(){
+    var STRING_COLUMN = 2;
+    var $table = $("#basic-onload");
+    var $table_cols = $table.find("th");
+    var $str_col = $table_cols.eq(STRING_COLUMN);
+
+    $table.stupidtable();
+
+    test_table_state(function(){
+        var expected = ["apple", "banana", "coke", "orange", "zebra"];
+        var vals = get_column_elements($table, STRING_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("test should_redraw setting", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+
+    $table.stupidtable_settings({
+        should_redraw: function(sort_info){
+            return false;
+        }
+    });
+    $table.stupidtable();
+    $table_cols.eq(INT_COLUMN).click();
+
+    test_table_state(function(){
+        // Redrawing will never occur so we should expect the initial order to
+        // be the current column order.
+        var expected = ["15", "95", "2", "-53", "195"];
+        var vals = get_column_elements($table, INT_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("test will_manually_build_table setting - 1", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+    var $int_column = $table_cols.eq(INT_COLUMN);
+    var $first_int_td = $table.find("tbody tr td").first();
+
+    $table.stupidtable_settings({
+        will_manually_build_table: true
+    });
+    $table.stupidtable();
+    ok(_.isEqual($first_int_td.text(), "15"));
+
+    $first_int_td.updateSortVal(200);
+    $first_int_td.text("200");
+    $int_column.click();
+
+    test_table_state(function(){
+        // Since we didn't manually build the table after updating the value, we
+        // shouldn't expect the table to sort correctly. 200 will still function
+        // as 15
+        var expected = ["-53", "2", "200", "95", "195"];
+        var vals = get_column_elements($table, INT_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("test will_manually_build_table setting - 2", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+    var $int_column = $table_cols.eq(INT_COLUMN);
+    var $first_int_td = $table.find("tbody tr td").first();
+
+    $table.stupidtable_settings({
+        will_manually_build_table: true
+    });
+    $table.stupidtable();
+    ok(_.isEqual($first_int_td.text(), "15"));
+
+    $first_int_td.updateSortVal(200);
+    $first_int_td.text("200");
+
+    // Rebuild the table
+    $table.stupidtable_build();
+    $int_column.click();
+
+    test_table_state(function(){
+        // Since we didn't manually build the table after updating the value, we
+        // shouldn't expect the table to sort correctly. 200 will still function
+        // as 15
+        var expected = ["-53", "2", "95", "195", "200"];
+        var vals = get_column_elements($table, INT_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+asyncTest("test will_manually_build_table setting - 3", function(){
+    var INT_COLUMN = 0;
+    var $table = $("#basic");
+    var $table_cols = $table.find("th");
+    var $int_column = $table_cols.eq(INT_COLUMN);
+    var $first_int_td = $table.find("tbody tr td").first();
+
+    $table.stupidtable_settings({
+        will_manually_build_table: false
+    });
+    $table.stupidtable();
+    ok(_.isEqual($first_int_td.text(), "15"));
+
+    $first_int_td.updateSortVal(200);
+    $first_int_td.text("200");
+    $int_column.click();
+
+    test_table_state(function(){
+        // Since we didn't manually build the table after updating the value, we
+        // shouldn't expect the table to sort correctly. 200 will still function
+        // as 15
+        var expected = ["-53", "2", "95", "195", "200"];
+        var vals = get_column_elements($table, INT_COLUMN);
+        ok(_.isEqual(vals, expected));
+    });
+});
+
+test("Multicolumn table initial order", function(){
+    var INT_COLUMN = 0;
+    var FLOAT_COLUMN = 1;
+    var STRING_COLUMN = 2;
+    var expected;
+    var vals;
+
+    var $table = $("#multicolumn-sort-test");
+
+    expected = ["1", "1", "2", "0", "1", "2", "0", "0", "0", "1", "2", "3", "2"];
+    vals = get_column_elements($table, INT_COLUMN);
+    ok(_.isEqual(vals, expected));
+
+    expected = ["10.0", "10.0", "10.0", "20.0", "30.0", "30.0", "10.0", "20.0", "10.0", "20.0", "10.0", "30.0", "30.0"];
+    vals = get_column_elements($table, FLOAT_COLUMN);
+    ok(_.isEqual(vals, expected));
+
+    expected = ["a", "a", "b", "c", "b", "a", "b", "a", "c", "a", "b", "a", "b"];
+    vals = get_column_elements($table, STRING_COLUMN);
+    ok(_.isEqual(vals, expected));
+
+});
+
+asyncTest("Basic multicolumn sort", function(){
+    var INT_COLUMN = 0;
+    var FLOAT_COLUMN = 1;
+    var STRING_COLUMN = 2;
+    var $table = $("#multicolumn-sort-test");
+    var $table_cols = $table.find("th");
+
+    $table.stupidtable();
+    $table_cols.eq(INT_COLUMN).click();
+
+    test_table_state(function(){
+        var expected;
+        var vals;
+
+        expected = ["0", "0", "0", "0", "1", "1", "1", "1", "2", "2", "2", "2", "3"];
+        vals = get_column_elements($table, INT_COLUMN);
+        ok(_.isEqual(vals, expected));
+
+        expected = ["10.0", "10.0", "20.0", "20.0", "10.0", "10.0", "20.0", "30.0", "10.0", "10.0", "30.0", "30.0", "30.0"];
+        vals = get_column_elements($table, FLOAT_COLUMN);
+        ok(_.isEqual(vals, expected));
+
+        expected = ["b", "c", "a", "c", "a", "a", "a", "b", "b", "b", "a", "b", "a"];
+        vals = get_column_elements($table, STRING_COLUMN);
         ok(_.isEqual(vals, expected));
     });
 });
