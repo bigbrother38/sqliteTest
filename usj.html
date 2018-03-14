@@ -1,0 +1,281 @@
+﻿<html>
+<head>
+    <title>環球資料</title>
+    <script src='Scripts/jquery-1.10.2.js'></script>
+    <script src='Scripts/jquery-ui.js'></script>
+    <link rel='stylesheet' href='Styles/mycss.css'>
+    <link rel='stylesheet' href='Styles/jquery-ui.css'>
+	<script>
+	$(document).ready(function() {
+
+		$('.scrollmenu input').click(function(){
+			var id = $(this).attr('data-href');
+			$('div[id^=tabs-]').each(function(j,p){
+				if($(this).attr('id').indexOf(id) >= 0)
+				{
+					$(this).show();
+				}
+				else
+				{
+					$(this).hide();
+				}
+			});
+		});
+	
+	});
+	</script>
+	<style>
+		h1{
+		background: #FFEFE7;
+		width: fit-content;
+		}
+		thead th, tfoot th{
+		background: #31bc86;
+		color: #fff;
+		font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+<div class='page'>
+<div class='content'>
+<div class='scrollmenu'>
+<input type='button' data-href='tabs-2' value='Cool Japan快通介紹'>
+<input type='button' data-href='tabs-3' value='一般快通介紹'>
+</div>
+<div id='tab'>
+<div id='tabs-2'>
+<h1>Cool Japan 快通4</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		美少女戰士<br />
+		<a href="https://www.youtube.com/watch?v=eULL59q50Ps" target='_blank'>魔物獵人</a><br />
+		柯南
+	</th>
+	<th>6300</th>
+	</tbody>
+	</table>
+<h1>Cool Japan 快通3</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		<a href="https://www.youtube.com/watch?v=eULL59q50Ps" target='_blank'>魔物獵人</a><br />
+		柯南
+	</th>
+	<th>5200</th>
+	</tbody>
+	</table>
+<h1>Cool Japan 快通2</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		<a href="https://www.youtube.com/watch?v=eULL59q50Ps" target='_blank'>魔物獵人</a>
+	</th>
+	<th>2600</th>
+	</tbody>
+	</table>
+<h1>美少女戰士 快通</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		美少女戰士
+	</th>
+	<th>2000</th>
+	</tbody>
+	</table>
+	<h1>柯南密室逃脫</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		柯南
+	</th>
+	<th>2980</th>
+	</tbody>
+	</table>
+	
+	
+</div>
+<div id='tabs-3' style='display: none;'>
+<h1>飛天翼龍快通7</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=i5AUBHVA6pk" target='_blank'>哈利波特禁忌之旅 in 4K3D</a><br />
+		<a href="https://www.youtube.com/watch?v=KbEvaWwBVNM" target='_blank'>鷹馬的飛行</a><br />
+		<a href="https://youtu.be/qQygI0a0Lgg" target='_blank'>小小兵瘋狂乘車遊</a><br />
+		<a href="https://youtu.be/tEtUbfy5FFM" target='_blank'>飛天翼龍</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a><br />
+		<a href="https://youtu.be/yLPZgp3V6Ng" target='_blank'>好萊塢美夢‧乘車遊</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a><br />
+		<a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a>
+	</th>
+	<th>7600</th>
+	</tbody>
+	</table>
+	<h1>逆轉世界快通7</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=i5AUBHVA6pk" target='_blank'>哈利波特禁忌之旅 in 4K3D</a><br />
+		<a href="https://www.youtube.com/watch?v=KbEvaWwBVNM" target='_blank'>鷹馬的飛行</a><br />
+		<a href="https://youtu.be/qQygI0a0Lgg" target='_blank'>小小兵瘋狂乘車遊</a><br />
+		<a href="https://www.youtube.com/watch?v=iShouxLaaQU" target='_blank'>好萊塢美夢乘車遊～逆轉世界～</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a><br />
+		<a href="https://youtu.be/yLPZgp3V6Ng" target='_blank'>好萊塢美夢‧乘車遊</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a><br />
+		<a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a>
+	</th>
+	<th>7600</th>
+	</tbody>
+	</table>
+	<h1>太空戰士快通7</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=i5AUBHVA6pk" target='_blank'>哈利波特禁忌之旅 in 4K3D</a><br />
+		<a href="https://www.youtube.com/watch?v=KbEvaWwBVNM" target='_blank'>鷹馬的飛行</a><br />
+		<a href="https://youtu.be/qQygI0a0Lgg" target='_blank'>小小兵瘋狂乘車遊</a><br />
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a><br />
+		<a href="https://youtu.be/yLPZgp3V6Ng" target='_blank'>好萊塢美夢‧乘車遊</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a><br />
+		<a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a>
+	</th>
+	<th>7600</th>
+	</tbody>
+	</table>
+	<h1>標準快通4</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=i5AUBHVA6pk" target='_blank'>哈利波特禁忌之旅 in 4K3D</a><br />
+		<a href="https://youtu.be/qQygI0a0Lgg" target='_blank'>小小兵瘋狂乘車遊</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a><br />
+		<a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a>
+	</th>
+	<th>5200</th>
+	</tbody>
+	</table>
+	<h1>飛天翼龍快通4</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=i5AUBHVA6pk" target='_blank'>哈利波特禁忌之旅 in 4K3D</a><br />
+		<a href="https://youtu.be/tEtUbfy5FFM" target='_blank'>飛天翼龍</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a><br />
+		<a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a>
+	</th>
+	<th>5200</th>
+	</tbody>
+	</table>
+	<h1>太空戰士快通4</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		<a href="https://youtu.be/tEtUbfy5FFM" target='_blank'>飛天翼龍</a><br />
+		<a href="https://youtu.be/xGXD1aUpj80" target='_blank'>蜘蛛俠驚魂歷險記乘車遊4K3D</a> 或 <a href="https://youtu.be/cGW7OmyUFcs" target='_blank'>侏羅紀公園‧乘船遊®</a> 或 <a href="https://youtu.be/yLPZgp3V6Ng" target='_blank'>好萊塢美夢‧乘車遊</a><br />
+		<a href="https://youtu.be/i2b5DiBQTck" target='_blank'>大白鯊®</a> 或 <a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a>
+	</th>
+	<th>5200</th>
+	</tbody>
+	</table>
+	<h1>太空戰士快通4 (2)</h1>
+<table style="width:90%;">
+<thead>
+	<tr>
+	<th style="width:60%;">項目</th>
+	<th>價錢</th>
+	</tr>
+	</thead>
+	<tbody>
+	<th>
+		<a href="https://www.youtube.com/watch?v=nJMXMSBv_jI" target='_blank'>太空戰士</a><br />
+		<a href="https://youtu.be/qQygI0a0Lgg" target='_blank'>小小兵瘋狂乘車遊</a><br />
+		<a href="https://youtu.be/yLPZgp3V6Ng" target='_blank'>好萊塢美夢‧乘車遊</a><br />
+		<a href="https://youtu.be/aUqHH2pA5H4" target='_blank'>魔鬼終結者2:3 -D®</a> 或 <a href="https://youtu.be/dG6utEFbc-U" target='_blank'>浴火赤子情®</a>
+	</th>
+	<th>5200</th>
+	</tbody>
+	</table>
+</div>
+</div></div>
+<footer class='footer fixed'>
+    <div class='footer-below'>
+         <div class='container'>
+             <p class='copyright'>© 2017 by WeiChun Wu</p>
+         </div>
+    </div>
+</div>
+
+</div>
+</body>
+</html>
