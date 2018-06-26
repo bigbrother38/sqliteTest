@@ -13,7 +13,8 @@
 			ss=encodeURIComponent(convert_unicode(name));
 			
 			var urls = [];
-
+			urls.push("https://www.momoshop.com.tw/search/searchShop.jsp?keyword="+name+"&searchType=4&curPage=1&_isFuzzy=0&showType=chessboardType"); 
+			urls.push("https://ecshweb.pchome.com.tw/search/v3.3/?q="+name+"&scope=all&sortParm=new&sortOrder=dc"); 
 			urls.push("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime"); 
 			urls.push("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc"); 
 			urls.push("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime"); 
@@ -28,14 +29,6 @@
 				
 			}
 			
-			//for (var i in urls) {
-			//	window.open(urls[i]); // ...that opens each stored link in its own window when clicked...
-			//}
-			//window.open("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime", '_blank');
-			//window.open("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc", '_blank');
-			//window.open("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime", '_blank');
-			//window.open("https://tw.carousell.com/search/products/?query=" + name, '_blank');
-			//window.open("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521" , '_blank');
 		}
 	}
 	
