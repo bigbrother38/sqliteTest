@@ -13,24 +13,57 @@
 			ss=encodeURIComponent(convert_unicode(name));
 			
 			var urls = [];
-			urls.push("https://www.momoshop.com.tw/search/searchShop.jsp?keyword="+name+"&searchType=4&curPage=1&_isFuzzy=0&showType=chessboardType"); 
-			urls.push("https://ecshweb.pchome.com.tw/search/v3.3/?q="+name+"&scope=all&sortParm=new&sortOrder=dc"); 
-			urls.push("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime"); 
-			urls.push("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc"); 
-			urls.push("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime"); 
-			urls.push("https://tw.carousell.com/search/products/?query=" + name); 
-			urls.push("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521"); 
-			
-			
-			
+			$('input[name=feature]').each(function(i,o){
+				if($(this).prop('checked'))
+				{
+					switch(this.id) {
+						case 'momo':
+							urls.push("https://www.momoshop.com.tw/search/searchShop.jsp?keyword="+name+"&searchType=4&curPage=1&_isFuzzy=0&showType=chessboardType"); 
+							break;
+						case 'pchome24h':
+							urls.push("https://ecshweb.pchome.com.tw/search/v3.3/?q="+name+"&scope=all&sortParm=new&sortOrder=dc"); 
+							break;
+						case 'shopee':
+							urls.push("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime"); 
+							break;
+						case 'ruten':
+							urls.push("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc"); 
+							break;
+						case 'yahoo':
+							urls.push("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime"); 
+							break;
+						case 'carousell':
+							urls.push("https://tw.carousell.com/search/products/?query=" + name); 
+							break;
+						case 'pcstore':
+							urls.push("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521"); 
+							break;
+					}
+				}
+			})
 			for (var i = 0; i < urls.length; i++) {
 				// will open each link in the current window
 				window.open(urls[i],"_blank")
-				
 			}
-			
+		}
+		else
+		{
+			alert('請輸入物品名稱');
 		}
 	}
+	
+	function selectall(){
+		$('input[name=feature]').each(function(i,o){
+			$(this).prop('checked', true);
+		})
+	}
+	
+	function clearall()	{
+		$('input[name=feature]').each(function(i,o){
+			$(this).prop('checked', false);
+		})
+	}
+	
 	
 	function convert_unicode(str){
     result = "";
@@ -78,7 +111,18 @@
 物品名稱：<input type="text" id="name" autocomplete="off">
 <input type="button" class="btn" value="查詢" onclick="myFunction()" />
 <br />
-
+<br />
+---賣場選擇---		<input type="button" class="btn" value="全選" onclick="selectall()" />		<input type="button" class="btn" value="清除全部" onclick="clearall()" />
+<br />
+<input type="checkbox" id="momo" name="feature" value="momo" checked /><label for="momo">momo購物網</label>
+<input type="checkbox" id="ruten" name="feature" value="ruten" checked /><label for="ruten">露天拍賣</label>
+	<input type="checkbox" id="shopee" name="feature" value="shopee" checked /><label for="shopee">蝦皮購物</label>
+<br />
+<input type="checkbox" id="pchome24h" name="feature" value="pchome24h" checked /><label for="pchome24h">PChome 24h購物</label>
+<input type="checkbox" id="yahoo" name="feature" value="yahoo" checked /><label for="yahoo">奇摩拍賣</label>
+<input type="checkbox" id="carousell" name="feature" value="carousell" checked /><label for="carousell">旋轉拍賣</label>
+<br />
+<input type="checkbox" id="pcstore" name="feature" value="pcstore" checked /><label for="pcstore">PChome個人賣場</label>
 
 </body>
 </html>
