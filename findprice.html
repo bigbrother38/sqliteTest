@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>價錢查詢(TW)</title>
+	<script src='Scripts/jquery-1.10.2.js'></script>
+</head>
+<body>
+<script type="text/javascript">
+
+    function myFunction(){
+		if($('#name').val() != "" ){ 
+			var name = $('#name').val();
+			ss=encodeURIComponent(convert_unicode(name));
+			
+			var urls = [];
+
+			urls.push("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime"); 
+			urls.push("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc"); 
+			urls.push("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime"); 
+			urls.push("https://tw.carousell.com/search/products/?query=" + name); 
+			urls.push("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521"); 
+			
+			
+			
+			for (var i = 0; i < urls.length; i++) {
+				// will open each link in the current window
+				window.open(urls[i],"_blank")
+				
+			}
+			
+			//for (var i in urls) {
+			//	window.open(urls[i]); // ...that opens each stored link in its own window when clicked...
+			//}
+			//window.open("https://shopee.tw/search/?keyword=" + name + "&page=0&sortBy=ctime", '_blank');
+			//window.open("https://find.ruten.com.tw/s/?q=" + name + "&sort=new%2Fdc", '_blank');
+			//window.open("https://tw.bid.yahoo.com/search/auction/product?cid=&clv=0&kw=" + name + "&p=" + name + "&sort=-ptime", '_blank');
+			//window.open("https://tw.carousell.com/search/products/?query=" + name, '_blank');
+			//window.open("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521" , '_blank');
+		}
+	}
+	
+	function convert_unicode(str){
+    result = "";
+
+    for(i = 0 ; i < str.length ; i++) {
+      c = str.charAt(i);
+      cstr = "";
+      if((' ' <= c && c <= '~') || (c == '\r') || (c == '\n')) {
+        /*if(c == '&') {
+          cstr = "&amp;";
+        } else*/ if(c == '<') {
+          cstr = "&lt;";
+        } else if(c == '>') {
+          cstr = "&gt;";
+        } else {
+          cstr = c.toString();
+        }
+      }
+      if(c.charCodeAt().toString()=="33971" || c.charCodeAt().toString()=="34766" || c.charCodeAt().toString()=="29319" ||
+      c.charCodeAt().toString()=="21452" || c.charCodeAt().toString()=="32957" || c.charCodeAt().toString()=="33747" || c.charCodeAt().toString()=="32171"
+      || c.charCodeAt().toString()=="31913" || c.charCodeAt().toString()=="34100" || c.charCodeAt().toString()=="40059"){
+        cstr = "&#" + c.charCodeAt().toString() + ";";
+      }
+
+      if(cstr){
+        result = result + cstr;
+      }else{
+        result = result + c;
+      }
+    }
+    return result;
+  }
+	
+	function b64EncodeUnicode(str) {
+		// first we use encodeURIComponent to get percent-encoded UTF-8,
+		// then we convert the percent encodings into raw bytes which
+		// can be fed into btoa.
+		return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+			function toSolidBytes(match, p1) {
+				return String.fromCharCode('0x' + p1);
+		}));
+	}
+</script>
+
+物品名稱：<input type="text" id="name">
+<input type="button" class="btn" value="查詢" onclick="myFunction()" />
+<br />
+
+
+</body>
+</html>
