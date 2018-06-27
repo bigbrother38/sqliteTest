@@ -38,6 +38,9 @@
 						case 'pcstore':
 							urls.push("http://seller.pcstore.com.tw/adm/psearch.htm?store_k_word="+ b64EncodeUnicode(ss) +"&slt_k_option=1&slt_k_range=all&k_option=#2521"); 
 							break;
+						case 'pinkoi':
+							urls.push("https://www.pinkoi.com/search?q="+ name+"&sortby=created"); 
+							break;
 					}
 				}
 			})
@@ -123,6 +126,6 @@
 <input type="checkbox" id="carousell" name="feature" value="carousell" checked /><label for="carousell">旋轉拍賣</label>
 <br />
 <input type="checkbox" id="pcstore" name="feature" value="pcstore" checked /><label for="pcstore">PChome個人賣場</label>
-
+<input type="checkbox" id="pinkoi" name="feature" value="pinkoi" checked /><label for="pinkoi">Pinkoi</label>
 </body>
 </html>
