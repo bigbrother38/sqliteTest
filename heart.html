@@ -1,0 +1,454 @@
+<html>
+<head>
+<script src='Scripts/jquery-1.10.2.js'></script>
+<script>
+function allowNumbersOnly(e) {
+    var code = (e.which) ? e.which : e.keyCode;
+    if (code > 31 && (code < 49 || code > 52)) {
+        e.preventDefault();
+    }
+}
+function changepage(id,Q){
+	if(id == "page1")
+	{
+		$('#page1').hide();
+		$('#page2').show();
+	}
+	else
+	{
+		if(checkdata(Q))
+		{
+			$('#page'+(parseInt(Q)+1)).hide();
+			$('#page'+(parseInt(Q)+2)).show();
+			if(id == "page6")
+			{
+				getscore();
+			}
+		}
+	}
+}
+function checkdata(Q)
+{
+	var ans="";
+	var re = true;
+	$('input[id*=Q'+Q+']').each(function(i,o){
+		if(this.value == ""){
+			$('#error').html('欄位不可空白');
+			re = false;
+		}
+		else{
+			if (ans.indexOf(this.value) > -1)
+			{
+				$('#error').html('欄位內容不可重複');
+				re = false;
+			}
+			else
+			{
+				ans += this.value;
+			}
+		}
+	})
+	
+	if (re){
+		$('#error').html('');
+	}
+	return re;
+	
+}
+function getscore(){
+	$('#score1').html(changs($('#Q11').val())+changs($('#Q21').val())+changs($('#Q31').val())+changs($('#Q41').val())+changs($('#Q51').val()));
+	$('#score2').html(changs($('#Q12').val())+changs($('#Q22').val())+changs($('#Q32').val())+changs($('#Q42').val())+changs($('#Q52').val()));
+	$('#score3').html(changs($('#Q13').val())+changs($('#Q23').val())+changs($('#Q33').val())+changs($('#Q43').val())+changs($('#Q53').val()));
+	$('#score4').html(changs($('#Q14').val())+changs($('#Q24').val())+changs($('#Q34').val())+changs($('#Q44').val())+changs($('#Q54').val()));
+	$('#score12').html(parseInt($('#score1').html())+parseInt($('#score2').html()));
+	$('#score23').html(parseInt($('#score2').html())+parseInt($('#score3').html()));
+	$('#score34').html(parseInt($('#score3').html())+parseInt($('#score4').html()));
+	$('#score14').html(parseInt($('#score1').html())+parseInt($('#score4').html()));
+}
+function changs(x){
+	switch (parseInt(x)) {
+		case 1:
+		　x=7;
+		　break;
+		case 2:
+		　x=5;
+		　break;
+		case 3:
+		　x=3;
+		　break;
+		case 4:
+		　x=1;
+		　break;
+		default:
+		　x=0;
+	}
+	return x;
+}
+</script>
+<style>
+td {
+	font-size:14px;
+}
+</style>
+</head>
+<body>
+<div id='page1' >
+<!-- Title -->
+<table style='width:100%'>
+<tbody>
+<tr>
+<td style='color:black;text-decoration:none;font-family:新細明體;font-size:17pt;font-weight:bold; padding-left:50px;'>
+人 際 風 格 分 析
+</td>
+</tr>
+
+<tr>
+<td>
+以下各欄均有1、2、3、4小項，每一小項有四個關於個性的說明，依符合您個性的程度分別予以1、2、3、4排序，1代表最接近你的個性，依序類推（每一欄都要選）請看下表範例：
+</td>
+</tr>
+</tbody>
+</table>
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+A
+</td>
+<td style='font-size:14px; width:50%;' >
+1、堅定
+</td>
+<td style='font-size:14px'>
+3
+</td>
+</tr>
+<tr>
+<td >
+2、有說服力
+</td>
+<td>
+4
+</td>
+</tr>
+<tr>
+<td >
+3、溫和
+</td>
+<td>
+2
+</td>
+</tr>
+<tr>
+<td >
+4、謙虛
+</td>
+<td>
+1
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage1' style='float:right;' value='開始測驗' onclick='changepage("page1","")'>
+</div>
+</div>
+
+<div id='page2' style="display: none;">
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td colspan='2' style='font-size:20px; width:70%;'>
+個 性 的 描 述 與 說 明
+</td>
+<td style='font-size:14px; width:30%'>
+自我評分(請填排序1-4)
+</td>
+</tr>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+A
+</td>
+<td style='font-size:14px; width:50%'>
+1、堅定、固執
+</td>
+<td>
+<input type="text" maxlength='1' id="Q11" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+2、有說服力、善表達
+</td>
+<td>
+<input type="text" maxlength='1' id="Q12" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+3、溫和、文雅
+</td>
+<td>
+<input type="text" maxlength='1' id="Q13" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+4、謙虛、容忍
+</td>
+<td>
+<input type="text" maxlength='1' id="Q14" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage2' style='float:right;' value='下一頁' onclick='changepage("page2","1")'>
+</div>
+</div>
+
+<div id='page3' style="display: none;">
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td colspan='2' style='font-size:20px; width:70%;'>
+個 性 的 描 述 與 說 明
+</td>
+<td style='font-size:14px; width:30%'>
+自我評分(請填排序1-4)
+</td>
+</tr>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+B
+</td>
+<td style='font-size:14px; width:50%'>
+1、喜歡冒險、膽大
+</td>
+<td>
+<input type="text" maxlength='1' id="Q21" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+2、團體中活力的來源
+</td>
+<td>
+<input type="text" maxlength='1' id="Q22" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+3、節制、穩健
+</td>
+<td>
+<input type="text" maxlength='1' id="Q23" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+4、嚴格、考究
+</td>
+<td>
+<input type="text" maxlength='1' id="Q24" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage3' style='float:right;' value='下一頁' onclick='changepage("page3","2")'>
+</div>
+</div>
+
+
+<div id='page4' style="display: none;">
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td colspan='2' style='font-size:20px; width:70%;'>
+個 性 的 描 述 與 說 明
+</td>
+<td style='font-size:14px; width:30%'>
+自我評分(請填排序1-4)
+</td>
+</tr>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+C
+</td>
+<td style='font-size:14px; width:50%'>
+1、有決心、有決斷力
+</td>
+<td>
+<input type="text" maxlength='1' id="Q31" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+2、使人心服、善於遊說
+</td>
+<td>
+<input type="text" maxlength='1' id="Q32" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+3、善良、和諧
+</td>
+<td>
+<input type="text" maxlength='1' id="Q33" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+4、謹慎、小心
+</td>
+<td>
+<input type="text" maxlength='1' id="Q34" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage4' style='float:right;' value='下一頁' onclick='changepage("page4","3")'>
+</div>
+</div>
+
+
+<div id='page5' style="display: none;">
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td colspan='2' style='font-size:20px; width:70%;'>
+個 性 的 描 述 與 說 明
+</td>
+<td style='font-size:14px; width:30%'>
+自我評分(請填排序1-4)
+</td>
+</tr>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+D
+</td>
+<td style='font-size:14px; width:50%'>
+1、有競爭性、有進取心
+</td>
+<td>
+<input type="text" maxlength='1' id="Q41" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+2、頑皮、開朗
+</td>
+<td>
+<input type="text" maxlength='1' id="Q42" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+3、親切、誠懇
+</td>
+<td>
+<input type="text" maxlength='1' id="Q43" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+4、順從、善思考
+</td>
+<td>
+<input type="text" maxlength='1' id="Q44" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage5' style='float:right;' value='下一頁' onclick='changepage("page5","4")'>
+</div>
+</div>
+
+<div id='page6' style="display: none;">
+<table style='width:80%;' border='1'>
+<tbody>
+<tr>
+<td colspan='2' style='font-size:20px; width:70%;'>
+個 性 的 描 述 與 說 明
+</td>
+<td style='font-size:14px; width:30%'>
+自我評分(請填排序1-4)
+</td>
+</tr>
+<tr>
+<td rowspan='4' style='font-size:20px; width:20%;' align="center">
+E
+</td>
+<td style='font-size:14px; width:50%'>
+1、堅持、有魄力
+</td>
+<td>
+<input type="text" maxlength='1' id="Q51" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+2、樂觀、好玩
+</td>
+<td>
+<input type="text" maxlength='1' id="Q52" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+3、寬大、仁慈
+</td>
+<td>
+<input type="text" maxlength='1' id="Q53" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+<tr>
+<td>
+4、正確、準確
+</td>
+<td>
+<input type="text" maxlength='1' id="Q54" onkeypress="allowNumbersOnly(event)" >
+</td>
+</tr>
+</tbody>
+</table>
+<div style='width:80%;margin-top:20px;'>
+<input type='button' id='btnpage6' style='float:right;' value='看結果' onclick='changepage("page6","5")'>
+</div>
+</div>
+
+
+<div id='page7' style="display: none;">
+<table style='width:100%'>
+<tbody>
+<tr>
+<td style='color:black;text-decoration:none;font-family:新細明體;font-size:17pt;font-weight:bold; padding-left:50px;'>
+人 際 風 格 分 析
+</td>
+</tr>
+</tbody>
+</table>
+<img src="images/a.jpg" >
+<div id='score1' style="position:absolute;left:523px;bottom:295px; font-size:25px;color:blue;">1</div>
+<div id='score2' style="position:absolute;left:523px;bottom:567px; font-size:25px;color:blue;">2</div>
+<div id='score4' style="position:absolute;left:83px;bottom:295px; font-size:25px;color:blue;">3</div>
+<div id='score3' style="position:absolute;left:83px;bottom:567px; font-size:25px;color:blue;">4</div>
+<div id='score12' style="position:absolute;left:510px;bottom:428px; font-size:25px;color:blue;">12</div>
+<div id='score23' style="position:absolute;left:311px;bottom:567px; font-size:25px;color:blue;">23</div>
+<div id='score34' style="position:absolute;left:93px;bottom:428px; font-size:25px;color:blue;">34</div>
+<div id='score14' style="position:absolute;left:305px;bottom:295px; font-size:25px;color:blue;">14</div>
+</div>
+
+
+
+<br />
+<br />
+
+<div style="color:red; width:80%;">
+<span id='error' style="float:right;"></span>
+</div>
+</body>
+</html>
